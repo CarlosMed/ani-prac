@@ -1,0 +1,69 @@
+.carousel {
+  min-width: 360px; /* 360px due to it being the median screen size for mobile */
+  max-width: 1440px;
+  margin: 0 40px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  gap: 100px;
+  aspect-ratio: 16 / 5;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black,
+    black,
+    black,
+    transparent
+  );
+}
+
+.wrapper img {
+  width: 50%;
+  border-radius: 5px;
+  object-fit: cover;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* adding some buffer padding on the first and last child */
+.wrapper img:first-child {
+  margin-left: 25%;
+}
+
+.wrapper img:last-child {
+  margin-right: 25%;
+}
+
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  inset: 0 0;
+}
+
+.icons > button {
+  all: unset;
+  cursor: pointer;
+}
+
+.icons > button > svg {
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.icons > button > svg:hover {
+  color: rgb(0, 0, 0, 1);
+}
+
+.icons > button:focus-visible {
+  outline: auto;
+  background-color: rgb(0, 0, 0, 0.1);
+  color: rgb(0, 0, 0, 1);
+}
